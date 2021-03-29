@@ -23,6 +23,7 @@
             <Button x:Name="clearTableButton" Content="Clear Table" Click="clearTableButton_Click"/>
             <Button x:Name="reshuffleButton" Content="Reshuffle" Click="reshuffleButton_Click"/>
             <Button x:Name="undoButton" Content="Undo" Click="undoButton_Click"/>
+            <Button x:Name="showTableButton" Content="Show Table" Click="showTableButton_Click"/>
         </StackPanel>
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.ColumnDefinitions>

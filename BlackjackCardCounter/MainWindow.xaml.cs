@@ -141,5 +141,11 @@ namespace BlackjackCardCounter
                 undoButton.IsEnabled = false;
             calculatePercentages();
         }
+
+        private void showTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            var wnd = new GraphicalView(this);
+            wnd.Show();
+        }
     }
 }
