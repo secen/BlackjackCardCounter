@@ -1,0 +1,86 @@
+﻿<Window x:Class="BlackjackCardCounter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackjackCardCounter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="795">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <Button x:Name="addOtherPlayerCardButton" Content="Add Card For Other Players" Click="addCardButton_Click" />
+            <Button x:Name="addHandButton" Content="Add Card in Hand" Click="addHandButton_Click"/>
+            <Button x:Name="addDealerButton" Content="Add Card For Dealer" Click="addDealerButton_Click"/>
+            <Button x:Name="clearTableButton" Content="Clear Table" Click="clearTableButton_Click"/>
+            <Button x:Name="reshuffleButton" Content="Reshuffle" Click="reshuffleButton_Click"/>
+            <Button x:Name="undoButton" Content="Undo" Click="undoButton_Click"/>
+        </StackPanel>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Your Hand" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Grid.Row="0" Grid.Column="0"/>
+            <DataGrid x:Name="HandDataGrid" Grid.Row="1" Grid.Column="0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Card" Binding="{Binding Text}" Width="300"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Other Players' Cards" Height="30" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"/>
+            <DataGrid x:Name="OtherPlayersDataGrid" Grid.Row="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Card" Binding="{Binding Text}" Width="200"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="House Hand" Height="30" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"/>
+            <DataGrid x:Name="HouseDataGrid" Grid.Row="1" Grid.Column="0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Card" Binding="{Binding Text}" Width="500"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="HandChanceLabel" Content="Your chance of going over 21: " Height="30" Grid.Row="1"/>
+            <Label x:Name="DealerChanceLabel" Content="Dealer chance of going over 21: " Height="30" Grid.Row="2"/>
+        </Grid>
+    </Grid>
+</Window>

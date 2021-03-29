@@ -1,0 +1,18 @@
+﻿<Window x:Class="BlackjackCardCounter.AddCardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackjackCardCounter"
+        mc:Ignorable="d"
+        Title="AddCardWindow" Height="500" Width="300">
+    <Grid>
+        <ComboBox Margin="26,153,45,274" x:Name="addCardComboBox"/>
+        <StackPanel Margin="60,245,89,195" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="29" Width="143">
+            <Button x:Name="addCardButton" Content="Add Card" Margin="5,0,20,0" Click="addCardButton_Click" />
+            <Button x:Name="closeCardButton" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,20,0" Padding="0,0,0,0" Click="closeCardButton_Click">
+               Close
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
